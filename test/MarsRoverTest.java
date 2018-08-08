@@ -11,7 +11,6 @@ class MarsRoverTest {
   @BeforeEach
   void setUp() {
     marsRover = new MarsRover(5, 5);
-    marsRover.deployRobotAt(1,4,"N");
   }
 
   @AfterEach
@@ -20,7 +19,16 @@ class MarsRoverTest {
   }
 
   @Test
-  public void expect() {
+  public void expectZeroZeroNorthCurrentLocationWhenDeployedAtOriginWithNorthFace() {
+    marsRover.deployRobotAt(0,0,"N");
+
+    assertEquals("0 0 N", marsRover.location());
+  }
+
+  @Test
+  public void expectOneFourNorthCurrentLocationWhenDeployedAtOneAndFourWithNorthFace() {
+    marsRover.deployRobotAt(1,4,"N");
+
     assertEquals("1 4 N", marsRover.location());
   }
 }
