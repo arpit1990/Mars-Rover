@@ -28,6 +28,10 @@ public class MarsRover {
     direction = direction.right();
   }
 
+  public void left() {
+    direction = direction.left();
+  }
+
   public String location() {
 
     return coordinates.toString() + " " + direction;

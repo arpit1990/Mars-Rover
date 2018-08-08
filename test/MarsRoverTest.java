@@ -40,6 +40,14 @@ class MarsRoverTest {
     assertEquals("2 3 N", marsRover.location());
   }
 
+  @Test
+  public void expectSameCoordinateWithNorthWhenTurnLeftFromEast() {
+    marsRover.deployRobotAt(2,3,"E");
+    marsRover.left();
+
+    assertEquals("2 3 N", marsRover.location());
+  }
+
   /*@Test
   public void expectsOneThreeNorthWhenMoveForwardFromOneTwoWithNorthFacing() {
     marsRover.deployRobotAt(1,4,"N");
