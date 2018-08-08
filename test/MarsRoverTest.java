@@ -19,16 +19,33 @@ class MarsRoverTest {
   }
 
   @Test
-  public void expectZeroZeroNorthCurrentLocationWhenDeployedAtOriginWithNorthFace() {
+  public void expectZeroZeroNorthWhenDeployedAtOriginWithNorthFace() {
     marsRover.deployRobotAt(0,0,"N");
 
     assertEquals("0 0 N", marsRover.location());
   }
 
   @Test
-  public void expectOneFourNorthCurrentLocationWhenDeployedAtOneAndFourWithNorthFace() {
+  public void expectOneFourNorthWhenDeployedAtOneAndFourWithNorthFace() {
     marsRover.deployRobotAt(1,4,"N");
 
     assertEquals("1 4 N", marsRover.location());
   }
+
+  @Test
+  public void expectSameCoordinateWithNorthWhenTurnRightFromWEST() {
+    marsRover.deployRobotAt(2,3,"W");
+    marsRover.right();
+
+    assertEquals("2 3 N", marsRover.location());
+  }
+
+  /*@Test
+  public void expectsOneThreeNorthWhenMoveForwardFromOneTwoWithNorthFacing() {
+    marsRover.deployRobotAt(1,4,"N");
+    marsRover.move();
+
+    assertEquals("1 4 N", marsRover.location());
+
+  }*/
 }

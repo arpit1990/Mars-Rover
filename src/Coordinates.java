@@ -1,7 +1,7 @@
 public class Coordinates {
 
-  private int xCoordinate;
-  private int yCoordinate;
+  private final int xCoordinate;
+  private final int yCoordinate;
 
   public Coordinates(final int xCoordinate, final int yCoordinate) {
     this.xCoordinate = xCoordinate;
@@ -17,5 +17,9 @@ public class Coordinates {
     coordinateOutput.append(yCoordinate);
 
     return coordinateOutput.toString();
+  }
+
+  public Coordinates moveForward(int xStepValue, int yStepValue) {
+    return new Coordinates(xCoordinate + xStepValue, yCoordinate + yStepValue);
   }
 }
