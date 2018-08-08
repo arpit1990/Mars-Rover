@@ -10,15 +10,17 @@ class MarsRoverTest {
 
   @BeforeEach
   void setUp() {
-    marsRover = new MarsRover(2, 4, "N");
+    marsRover = new MarsRover(5, 5);
+    marsRover.deployRobotAt(1,4,"N");
   }
 
   @AfterEach
   void tearDown() {
+    marsRover = null;
   }
 
   @Test
   public void expect() {
-    assertEquals("2 4 N", marsRover.location());
+    assertEquals("1 4 N", marsRover.location());
   }
 }
