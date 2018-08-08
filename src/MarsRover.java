@@ -37,7 +37,10 @@ public class MarsRover {
     return coordinates.toString() + " " + direction;
   }
 
-  /*public void move() {
-    Coordinates afterMove = coordinates.moveForward();
-  }*/
+  public void move() {
+    // get the direction and increment coordinates accordingly
+    Coordinates afterMove = coordinates.moveForward(direction.xStepSize(), direction.yStepSize());
+
+    coordinates = afterMove;
+  }
 }

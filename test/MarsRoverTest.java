@@ -48,12 +48,11 @@ class MarsRoverTest {
     assertEquals("2 3 N", marsRover.location());
   }
 
-  /*@Test
+  @Test
   public void expectsOneThreeNorthWhenMoveForwardFromOneTwoWithNorthFacing() {
-    marsRover.deployRobotAt(1,4,"N");
+    marsRover.deployRobotAt(1,3,"N");
     marsRover.move();
 
     assertEquals("1 4 N", marsRover.location());
-
-  }*/
+  }
 }
