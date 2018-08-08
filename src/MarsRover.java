@@ -4,8 +4,7 @@ public class MarsRover {
   private int xBoundaryCoordinate;
   private int yCBoundaryCoordinate;
 
-  private int xCoordinate;
-  private int yCoordinate;
+  private Coordinates coordinates;
 
   private String direction;
 
@@ -15,13 +14,16 @@ public class MarsRover {
   }
 
   public void deployRobotAt(final int xCoordinate, final int yCoordinate, String direction) {
-    this.xCoordinate = xCoordinate;
-    this.yCoordinate = yCoordinate;
+    coordinates = new Coordinates(xCoordinate, yCoordinate);
     this.direction = direction;
+  }
+
+  public void turnLeft() {
+
   }
 
   public String location() {
 
-    return xCoordinate + " " + yCoordinate + " " + direction;
+    return coordinates.toString() + " " + direction;
   }
 }
