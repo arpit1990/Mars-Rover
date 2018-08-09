@@ -18,5 +18,10 @@ class CoordinatesTest {
     coordinates = null;
   }
 
+  @Test
+  public void expectsOneStepForwardOnXWithGivenCoordinates() {
+    Coordinates afterMove = coordinates.moveForward(1,0);
 
+    assertEquals("3 4", afterMove.toString());
+  }
 }
