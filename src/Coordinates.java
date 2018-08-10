@@ -1,3 +1,4 @@
+// Represent position in 2D
 public class Coordinates {
 
   private final int xCoordinate;

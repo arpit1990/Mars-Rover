@@ -1,5 +1,5 @@
 //Understands the Navigation facing
-public enum Direction {
+enum Direction {
 
   N {
     public Direction right() {
@@ -11,12 +11,12 @@ public enum Direction {
     }
 
     @Override
-    public int xStepSize() {
+    public int xOneStepSize() {
       return 0;
     }
 
     @Override
-    public int yStepSize() {
+    public int yOneStepSize() {
       return 1;
     }
   },
@@ -30,12 +30,12 @@ public enum Direction {
     }
 
     @Override
-    public int xStepSize() {
+    public int xOneStepSize() {
       return 0;
     }
 
     @Override
-    public int yStepSize() {
+    public int yOneStepSize() {
       return -1;
     }
   },
@@ -49,12 +49,12 @@ public enum Direction {
     }
 
     @Override
-    public int xStepSize() {
+    public int xOneStepSize() {
       return 1;
     }
 
     @Override
-    public int yStepSize() {
+    public int yOneStepSize() {
       return 0;
     }
   },
@@ -68,18 +68,21 @@ public enum Direction {
     }
 
     @Override
-    public int xStepSize() {
+    public int xOneStepSize() {
       return -1;
     }
 
     @Override
-    public int yStepSize() {
+    public int yOneStepSize() {
       return 0;
     }
   };
 
   public abstract Direction right();
+
   public abstract Direction left();
-  public abstract int xStepSize();
-  public abstract int yStepSize();
+
+  public abstract int xOneStepSize();
+
+  public abstract int yOneStepSize();
 }

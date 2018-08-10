@@ -1,5 +1,3 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,11 +16,11 @@ class DirectionTest {
 
   @Test
   public void expectsOneOnYWhenMoveToNorth() {
-    assertEquals(1, Direction.N.yStepSize());
+    assertEquals(1, Direction.N.yOneStepSize());
   }
 
   @Test
   public void expectsMinusOneOnXWhenMoveToWest() {
-    assertEquals(-1, Direction.W.xStepSize());
+    assertEquals(-1, Direction.W.xOneStepSize());
   }
 }

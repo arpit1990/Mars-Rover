@@ -1,3 +1,5 @@
+import javax.xml.bind.ValidationException;
+
 // Represents the squad of robot rovers on the mars
 public class MarsRover {
 
@@ -10,8 +12,6 @@ public class MarsRover {
 
   private Direction direction;
 
-  //xBoundaary = topRightXCoordinate
-  //yBoundary = topRightYCoordinate
   public MarsRover(final int topRightXCoordinate, final int topRightYCoordinate) {
     this.topRightXCoordinate = topRightXCoordinate;
     this.topRightYCoordinate = topRightYCoordinate;
@@ -33,14 +33,35 @@ public class MarsRover {
   }
 
   public String location() {
-
     return coordinates.toString() + " " + direction;
   }
 
   public void move() {
     // get the direction and increment coordinates accordingly
-    Coordinates afterMove = coordinates.moveForward(direction.xStepSize(), direction.yStepSize());
+    Coordinates afterMove = coordinates.moveForward(direction.xOneStepSize(), direction.yOneStepSize());
 
     coordinates = afterMove;
+  }
+
+  public void executeNavigationCommand(String navigationCommand) {
+    deployRobotAt(1,2,"N");
+
+    String[] navigationCommands = navigationCommand.split("");
+    for(String navigation : navigationCommands) {
+      switch(navigation) {
+        case "L":
+          left();
+          break;
+        case "R":
+          right();
+          break;
+        case "M":
+          move();
+          break;
+          default:
+            System.out.println("Invalid command");
+            return;
+      }
+    }
   }
 }
